@@ -10,12 +10,13 @@ class App extends React.Component {
 
   state = {
     name1: '',
-    name2: ''
+    name2: '',
+    data:"loading"
   }
 
   submit(){
     // console.log("Called")
-    fetch("https://love-calculator.p.rapidapi.com/getPercentage?fname=Try2&sname=Try2",
+    fetch(`https://love-calculator.p.rapidapi.com/getPercentage?fname=${this.state.name1}&sname=${this.state.name2}`,
     {headers: { "x-rapidapi-host":"love-calculator.p.rapidapi.com", "x-rapidapi-key":"0598e7e61fmsh5fbe81bcaae76fep1de32cjsna13d922e74e6"}}
     )
 
@@ -44,12 +45,12 @@ class App extends React.Component {
         <TextInput
           label='Person 1'
           value={this.state.hname}
-          onChangeText={text => this.setState({ text })}
+          onChangeText={text => this.setState({ name1:text })}
         />
         <TextInput
           label='Person 2'
           value={this.state.sname}
-          onChangeText={text => this.setState({ text })}
+          onChangeText={text => this.setState({ name2:text })}
         />
 
         <Button 
