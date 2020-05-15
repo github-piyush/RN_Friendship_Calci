@@ -34,9 +34,11 @@ class App extends React.Component {
           value={this.state.sname}
           onChangeText={text => this.setState({ text })}
         />
-        <Button style={{backgroundColor:'yellow'}} icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
+
+        <Button style={{ backgroundColor: 'yellow' }} icon="adjust" mode="contained" onPress={() => console.log('Pressed')}>
           <Text style={{ color:'#660033'}}>Calculate</Text>
         </Button>
+
       </View>
     );
   }
