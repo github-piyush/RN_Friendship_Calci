@@ -11,7 +11,7 @@ class App extends React.Component {
   state = {
     name1: '',
     name2: '',
-    data:"loading"
+    result:"loading"
   }
 
   submit(){
@@ -22,7 +22,10 @@ class App extends React.Component {
 
     .then(data=>data.json())
     .then(data2 =>{
-      console.log(data2)
+      console.log(data2);
+      this.setState({
+        result:data2
+      })
     })
   }
 
@@ -61,7 +64,7 @@ class App extends React.Component {
          <Text style={{ color:'#660033'}}>Calculate</Text>
         </Button>
 
-      <Disp/>
+      <Disp data={this.state.result}/>
 
       </View>
     );
