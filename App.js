@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <View style={styles.container}>
 
-        <Appbar.Header style={{backgroundColor:'purple'}}>
+        <Appbar.Header style={{ backgroundColor:'yellow'}}>
          
           <Appbar.Content
             title="Friendship % Calculator"
@@ -35,7 +35,7 @@ class App extends React.Component {
           onChangeText={text => this.setState({ text })}
         />
         <Button style={{backgroundColor:'yellow'}} icon="camera" mode="contained" onPress={() => console.log('Pressed')}>
-          <Text style={{color:'blue'}}>Calculate</Text>
+          <Text style={{ color:'#660033'}}>Calculate</Text>
         </Button>
       </View>
     );
@@ -52,7 +52,7 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#cc00ff',
+    backgroundColor:'#660033',
 
     flexDirection: "column",       //how we will justifyContent
     // justifyContent: "center",      //centerize flexDirection-wise
