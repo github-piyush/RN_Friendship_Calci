@@ -9,34 +9,43 @@ class App extends React.Component {
     name2: ''
   }
 
+  submit(){
+    console.log("Called")
+  }
+
   render() {
     return (
       <View style={styles.container}>
 
-        <Appbar.Header style={{ backgroundColor:'yellow'}}>
+        <Appbar.Header style={{ backgroundColor:'yellow', marginBottom:10}}>
          
           <Appbar.Content
             title="Friendship % Calculator"
             subtitle="masterapps.co"
+            style={{alignItems:"center"}}
           />
           
         </Appbar.Header> 
 
 
-        <Text style={{ fontSize: 20, color: "yellow" }}>Please enter the details here...</Text>
+        <Text style={{ fontSize: 20, color: "yellow" ,marginBottom:10 , marginTop:10}}>Please enter the details here...</Text>
         <TextInput
-          label='Name 1'
+          label='Person 1'
           value={this.state.hname}
           onChangeText={text => this.setState({ text })}
         />
         <TextInput
-          label='Name 2'
+          label='Person 2'
           value={this.state.sname}
           onChangeText={text => this.setState({ text })}
         />
 
-        <Button style={{ backgroundColor: 'yellow' }} icon="adjust" mode="contained" onPress={() => console.log('Pressed')}>
-          <Text style={{ color:'#660033'}}>Calculate</Text>
+        <Button 
+        style={{ backgroundColor: 'yellow', margin:30 }} 
+        icon="adjust" 
+        mode="contained" 
+        onPress={this.submit.bind(this)}>
+         <Text style={{ color:'#660033'}}>Calculate</Text>
         </Button>
 
       </View>
