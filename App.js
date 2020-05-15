@@ -33,7 +33,7 @@ class App extends React.Component {
     return (
       <View style={styles.container}>
 
-        <Appbar.Header style={{ backgroundColor:'yellow', marginBottom:10}}>
+        <Appbar.Header style={{ backgroundColor:'#ff0066', marginBottom:10}}>
          
           <Appbar.Content
             title="FRIENDSHIP % CALCULATOR"
@@ -46,12 +46,12 @@ class App extends React.Component {
 
         <Text style={{ fontSize: 15, color: "yellow" ,marginBottom:10 , marginTop:10}}>Please enter the details here...</Text>
         <TextInput
-          label='Person 1'
+          label='Person1 Name'
           value={this.state.hname}
           onChangeText={text => this.setState({ name1:text })}
         />
         <TextInput
-          label='Person 2'
+          label='Person2 Name'
           value={this.state.sname}
           onChangeText={text => this.setState({ name2:text })}
         />
@@ -81,11 +81,9 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#660033',
+    backgroundColor:'#6600cc',//'#660033',
 
     flexDirection: "column",       //how we will justifyContent
-    // justifyContent: "center",      //centerize flexDirection-wise
-    // alignItems: "center"           //centerize the opposite of flexdirection
   },
 });
 
