@@ -10,7 +10,14 @@ class App extends React.Component {
   }
 
   submit(){
-    console.log("Called")
+    // console.log("Called")
+    fetch("https://love-calculator.p.rapidapi.com/getPercentage?fname=Try2&sname=Try2",
+    {headers: { "x-rapidapi-host":"love-calculator.p.rapidapi.com", "x-rapidapi-key":"0598e7e61fmsh5fbe81bcaae76fep1de32cjsna13d922e74e6"}}
+    )
+    .then(data=>data.json())
+    .then(data2 =>{
+      console.log(data2)
+    })
   }
 
   render() {
