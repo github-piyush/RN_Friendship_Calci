@@ -1,6 +1,10 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image } from 'react-native';
-import { TextInput, Appbar , Button} from 'react-native-paper'
+import { TextInput, Appbar , Button} from 'react-native-paper';
+
+
+import Disp from './components/dispfriendship';
+
 
 class App extends React.Component {
 
@@ -14,6 +18,7 @@ class App extends React.Component {
     fetch("https://love-calculator.p.rapidapi.com/getPercentage?fname=Try2&sname=Try2",
     {headers: { "x-rapidapi-host":"love-calculator.p.rapidapi.com", "x-rapidapi-key":"0598e7e61fmsh5fbe81bcaae76fep1de32cjsna13d922e74e6"}}
     )
+
     .then(data=>data.json())
     .then(data2 =>{
       console.log(data2)
@@ -27,7 +32,7 @@ class App extends React.Component {
         <Appbar.Header style={{ backgroundColor:'yellow', marginBottom:10}}>
          
           <Appbar.Content
-            title="Friendship % Calculator"
+            title="FRIENDSHIP % CALCULATOR"
             subtitle="masterapps.co"
             style={{alignItems:"center"}}
           />
@@ -35,7 +40,7 @@ class App extends React.Component {
         </Appbar.Header> 
 
 
-        <Text style={{ fontSize: 20, color: "yellow" ,marginBottom:10 , marginTop:10}}>Please enter the details here...</Text>
+        <Text style={{ fontSize: 15, color: "yellow" ,marginBottom:10 , marginTop:10}}>Please enter the details here...</Text>
         <TextInput
           label='Person 1'
           value={this.state.hname}
@@ -54,6 +59,8 @@ class App extends React.Component {
         onPress={this.submit.bind(this)}>
          <Text style={{ color:'#660033'}}>Calculate</Text>
         </Button>
+
+      <Disp/>
 
       </View>
     );
